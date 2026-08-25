@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About This Site</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo">3D</span>
+        <div class="brand-text">
+          <h1 data-i18n="aboutTitle">About This Site</h1>
+          <p data-i18n="aboutSub">A practical reference for exploring 3D printers</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="nav-link" data-i18n="browsePrinters">Browse Printers</a>
+        <div class="lang-switch" role="group" aria-label="Language / 言語">
+          <button type="button" id="langEn" class="lang-btn">EN</button>
+          <button type="button" id="langJa" class="lang-btn">日本語</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="about-layout">
+    <section class="about-hero">
+      <span class="tech-badge">3D DATABASE</span>
+      <h2 data-i18n="aboutIntroTitle">What This Site Is</h2>
+      <p data-i18n="aboutIntro">This site is a searchable reference for comparing 3D printers across technologies, manufacturers, and generations.</p>
+      <p class="about-notice" data-i18n="aboutNotice">This site was created using AI. If any information is incorrect or if a model is missing, please feel free to send an email to report@example.com to let us know!</p>
+    </section>
+
+    <div class="about-grid">
+      <article class="about-card">
+        <span class="about-number">01</span>
+        <h2 data-i18n="aboutDatabaseTitle">About the Database</h2>
+        <p data-i18n="aboutDatabase">Each entry includes core specifications such as build volume, layer resolution, print speed, price, connectivity, and notable features.</p>
+      </article>
+      <article class="about-card">
+        <span class="about-number">02</span>
+        <h2 data-i18n="aboutCompareTitle">Compare Models</h2>
+        <p data-i18n="aboutCompare">Use the comparison page to select up to four printers and review their specifications side by side.</p>
+        <a href="compare.html" class="about-action" data-i18n="aboutCompareLink">Compare Printers</a>
+      </article>
+      <article class="about-card">
+        <span class="about-number">03</span>
+        <h2 data-i18n="aboutDataTitle">Data Notes</h2>
+        <p data-i18n="aboutData">Prices, availability, and specifications can change over time. Treat this database as a starting point and confirm important details with the manufacturer before purchasing.</p>
+      </article>
+      <article class="about-card about-card-accent">
+        <span class="about-number">04</span>
+        <h2 data-i18n="aboutReportTitle">Help Improve the Database</h2>
+        <p data-i18n="aboutReport">If you find incorrect or outdated information, please report it using the message at the top of the page.</p>
+      </article>
+    </div>
+
+    <div class="about-links">
+      <a href="index.html" class="nav-link" data-i18n="aboutBrowse">Browse the Database</a>
+      <a href="compare.html" class="nav-link" data-i18n="aboutCompareLink">Compare Printers</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="aboutFooter">3D Printer Database — About This Site</p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="about.js"></script>
+</body>
+</html>

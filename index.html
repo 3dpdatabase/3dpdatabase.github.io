@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#0f1117" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>3D Printer Database</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo">3D</span>
+        <div class="brand-text">
+          <h1 data-i18n="brandTitle">Printer Database</h1>
+          <p data-i18n="brandSub">Browse and compare 3D printer models</p>
+        </div>
+      </div>
+      <div class="report-link" id="reportLink">
+        <span class="report-text" data-i18n="reportText">Did you find any incorrect information? Please report it!</span>
+        <span class="report-email hidden" id="reportEmail">report@3dpdatabase.com</span>
+      </div>
+      <div class="header-actions">
+        <a href="compare.html" class="nav-link" data-i18n="comparePrinters">Compare Printers</a>
+        <a href="about.html" class="nav-link" data-i18n="aboutNav">About This Site</a>
+        <div class="lang-switch" role="group" aria-label="Language / 言語">
+          <button type="button" id="langEn" class="lang-btn" data-lang="en" title="English">EN</button>
+          <button type="button" id="langJa" class="lang-btn" data-lang="ja" title="日本語">日本語</button>
+        </div>
+        <div class="record-count" id="recordCount">0 records</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Sidebar: filters -->
+    <aside class="sidebar">
+      <div class="filter-panel">
+        <h2 class="filter-title" data-i18n="search">Search</h2>
+        <input type="search" id="searchInput" class="search-input"
+               placeholder="Search name, brand, description..."
+               data-i18n-placeholder="searchPlaceholder" />
+
+        <h2 class="filter-title" data-i18n="technology">Technology</h2>
+        <div class="filter-group" id="techFilters"></div>
+
+        <h2 class="filter-title" data-i18n="features">Features</h2>
+        <div class="filter-group" id="featureFilters"></div>
+
+        <h2 class="filter-title" data-i18n="maxPrice">Max Price</h2>
+        <input type="range" id="priceRange" min="0" max="7000" step="100" value="7000" />
+        <div class="price-display">
+          <span id="priceMin">$0</span>
+          <span id="priceLabel">$7000</span>
+        </div>
+
+        <button id="resetFilters" class="reset-btn" data-i18n="reset">Reset Filters</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="toolbar">
+        <label class="sort-label" for="sortSelect" data-i18n="sortBy">Sort by:</label>
+        <select id="sortSelect">
+          <option value="name">Name (A-Z)</option>
+          <option value="price-asc">Price (Low to High)</option>
+          <option value="price-desc">Price (High to Low)</option>
+          <option value="year">Year (Newest)</option>
+        </select>
+      </div>
+
+      <div id="grid" class="grid"></div>
+      <div id="emptyState" class="empty-state hidden" data-i18n="empty">
+        No printers match your filters.
+      </div>
+    </section>
+  </main>
+
+  <!-- Detail modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p data-i18n="footer">3D Printer Database &mdash; demo dataset</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

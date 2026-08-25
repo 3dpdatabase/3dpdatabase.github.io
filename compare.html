@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#0f1117" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Compare 3D Printers</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-logo">3D</span>
+        <div class="brand-text">
+          <h1 data-i18n="compareTitle">Compare Printers</h1>
+          <p data-i18n="compareSub">Select and compare 3D printer specifications side by side</p>
+        </div>
+      </div>
+      <div class="report-link" id="reportLink">
+        <span class="report-text" data-i18n="reportText">Did you find any incorrect information? Please report it!</span>
+        <span class="report-email hidden" id="reportEmail">report@3dpdatabase.com</span>
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="nav-link" data-i18n="browsePrinters">Browse Printers</a>
+        <a href="about.html" class="nav-link" data-i18n="aboutNav">About This Site</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" id="langEn" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" id="langJa" class="lang-btn" data-lang="ja">日本語</button>
+        </div>
+        <div class="record-count" id="compareCount">0 selected</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="compare-layout">
+    <!-- Printer Selection Panel -->
+    <section class="compare-select-panel">
+      <h2 data-i18n="selectPrintersTitle">Select Printers to Compare</h2>
+      <p class="select-hint" data-i18n="selectHint">Choose up to 4 printers for side-by-side comparison</p>
+      
+      <div class="search-box">
+        <input type="search" id="printerSearch" class="search-input" 
+               placeholder="Search printers..." data-i18n-placeholder="searchPrintersPlaceholder" />
+      </div>
+
+      <div class="selected-printers" id="selectedPrinters">
+        <div class="empty-selection" data-i18n="noPrintersSelected">No printers selected yet</div>
+      </div>
+
+      <div class="printer-list" id="printerList"></div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="compare-table-section" id="compareSection">
+      <div class="empty-state" id="emptyCompare">
+        <p data-i18n="selectAtLeastTwo">Select at least 2 printers to start comparing</p>
+      </div>
+      
+      <div class="compare-table-wrapper" id="compareWrapper" style="display: none;">
+        <table class="compare-table" id="compareTable">
+          <thead id="compareThead"></thead>
+          <tbody id="compareTbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="compareFooter">3D Printer Database &mdash; Comparison Tool</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="i18n.js"></script>
+  <script src="compare.js"></script>
+</body>
+</html>
